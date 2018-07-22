@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# move tcpdump to avoid the weird sharing error
+mv /usr/sbin/tcpdump /usr/bin/tcpdump
+
 # remove IPs from input/output interface to prepare them for bridging
 ip addr flush dev $IFIN
 ip addr flush dev $IFOUT
